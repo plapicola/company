@@ -1,8 +1,6 @@
-require 'minitest/autorun'
-require 'minitest/pride'
-require './lib/employee'
+require_relative 'test_helper'
 
-class employeeTest < Minitest::Test
+class EmployeeTest < Minitest::Test
   def test_it_exists
 		employee = Employee.new({name: "Alice Smith", age: 20, salary: "50000"})
 
