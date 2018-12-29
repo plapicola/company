@@ -1,27 +1,24 @@
 require_relative 'test_helper'
 
 class EmployeeTest < Minitest::Test
-  def test_it_exists
-		employee = Employee.new({name: "Alice Smith", age: 20, salary: "50000"})
+  
+  def setup
+    @employee = Employee.new({name: "Alice Smith", age: 20, salary: "50000"})
+  end
 
-		assert_instance_of Employee, employee
+  def test_it_exists
+	   assert_instance_of Employee, @employee
 	end
 
 	def test_it_has_name
-		employee = Employee.new({name: "Alice Smith", age: 20, salary: "50000"})
-
-		assert_equal "Alice Smith", employee.name
+		assert_equal "Alice Smith", @employee.name
 	end
 
 	def test_it_has_age
-		employee = Employee.new({name: "Alice Smith", age: 20, salary: "50000"})
-
-		assert_equal 20, employee.age
+		assert_equal 20, @employee.age
 	end
 
 	def test_it_has_salary
-		employee = Employee.new({name: "Alice Smith", age: 20, salary: "50000"})
-
-		assert_equal 50000, employee.salary
+		assert_equal 50000, @employee.salary
 	end
 end
